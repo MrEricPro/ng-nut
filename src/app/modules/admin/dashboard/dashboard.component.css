@@ -82,6 +82,11 @@ nz-layout#dashboard > .right-content > nz-footer {
   text-align: center;
 }
 
+/* 主页菜单 */
+nz-layout#dashboard > #menus.ant-layout-sider:not(.ant-layout-sider-collapsed) {
+  overflow: auto;
+}
+
 /* 子模块下列表搜索框 */
 ::ng-deep .search-box .nz-row {
   margin-bottom: 0;
