@@ -79,10 +79,10 @@ export class RoleComponent extends ComponentBase implements OnInit {
     this.additForm = this.fb.group({
       // id
       id: [null],
-      /*// 部门
+      // 部门
       deptId: [null],
       // 部门名称; 仅用于显示
-      deptName: [null, Validators.required],*/
+      deptName: [null, Validators.required],
       // 角色名称
       roleName: [null, [Validators.required]],
       // 角色编码
@@ -169,12 +169,12 @@ export class RoleComponent extends ComponentBase implements OnInit {
     }
 
     // 部门
-    const checkedDepts = [];
-    TreeUtils.getCheckedItems(this.depts, checkedDepts);
-    role['deptIdList'] = [];
-    for (const cd of checkedDepts) {
-      role['deptIdList'].push(cd.id);
-    }
+    // const checkedDepts = [];
+    // TreeUtils.getCheckedItems(this.depts, checkedDepts);
+    // role['deptIdList'] = [];
+    // for (const cd of checkedDepts) {
+    //   role['deptIdList'].push(cd.id);
+    // }
 
     this.http.post(
       Utils.hasText(role.id) ? environment.modules.admin.http.urls.role.update : environment.modules.admin.http.urls.role.save,
@@ -392,7 +392,6 @@ export class RoleComponent extends ComponentBase implements OnInit {
 
   /**
    * 当部门选择器中的一项被选中时
-   * @deprecated
    * @param e
    */
   public onDeptSelect(e) {
@@ -406,7 +405,6 @@ export class RoleComponent extends ComponentBase implements OnInit {
 
   /**
    * 显示部门选择器
-   * @deprecated
    */
   public showDeptSelector() {
     this.deptSelectorModal = this.modal.open({
